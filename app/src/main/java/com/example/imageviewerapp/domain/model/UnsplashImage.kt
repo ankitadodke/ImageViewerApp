@@ -23,7 +23,7 @@ data class UnsplashImage(
     val topic_submissions: Map<String, TopicSubmission>?,
     val asset_type: String?,
     val user: User?,
-    val isFav : Boolean?
+    val isFav: Boolean?
 )
 
 data class Urls(
@@ -85,6 +85,7 @@ data class ProfileImage(
     val medium: String,
     val large: String
 )
+
 data class Social(
     val instagram_username: String?,
     val portfolio_url: String?,

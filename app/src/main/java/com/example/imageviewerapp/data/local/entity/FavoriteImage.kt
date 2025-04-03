@@ -93,8 +93,7 @@ fun FavoriteImage.toUnsplashPhoto() = UnsplashImage(
         accepted_tos = false,
         for_hire = false,
         social = Social(null, null, null, null)
-    )
-    ,
+    ),
     isFav = false
 )
 

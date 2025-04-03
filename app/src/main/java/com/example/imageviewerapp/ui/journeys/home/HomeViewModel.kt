@@ -41,11 +41,12 @@ class HomeViewModel @Inject constructor(
 
                 result.fold(
                     onSuccess = { images ->
-                        val currentImages = if (_uiState.value is HomeUiState.Success && currentPage > 1) {
-                            (_uiState.value as HomeUiState.Success).images
-                        } else {
-                            emptyList()
-                        }
+                        val currentImages =
+                            if (_uiState.value is HomeUiState.Success && currentPage > 1) {
+                                (_uiState.value as HomeUiState.Success).images
+                            } else {
+                                emptyList()
+                            }
                         _uiState.value = HomeUiState.Success(currentImages + images)
                     },
                     onFailure = { exception ->

@@ -55,6 +55,7 @@ fun HomeScreen(
                     LoadingIndicator()
                 }
             }
+
             is HomeUiState.Success -> {
                 val images = (uiState as HomeUiState.Success).images
 
@@ -66,7 +67,7 @@ fun HomeScreen(
                 ) {
                     items(images) { image ->
                         if (image is UnsplashImage)
-                        ImageGridItem(image = image, onImageClick = navigateToDetail)
+                            ImageGridItem(image = image, onImageClick = navigateToDetail)
                     }
 
                     item {
@@ -79,6 +80,7 @@ fun HomeScreen(
                     }
                 }
             }
+
             is HomeUiState.Error -> {
                 ErrorMessage(message = (uiState as HomeUiState.Error).message) {
                     viewModel.loadImages()
@@ -103,7 +105,7 @@ fun ImageGridItem(
     ) {
         Box {
             AsyncImage(
-                model = image.urls.regular?:"",
+                model = image.urls.regular ?: "",
                 contentDescription = image.description,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier

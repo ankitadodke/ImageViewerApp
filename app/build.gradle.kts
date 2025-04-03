@@ -86,9 +86,9 @@ dependencies {
     implementation(libs.unsplash.photopicker.android)
 
     // Room Database (if used)
-    implementation ("androidx.room:room-runtime:2.6.1")
-    implementation ("androidx.room:room-ktx:2.6.1")
-    kapt ("androidx.room:room-compiler:2.6.1")
+    implementation(libs.androidx.room.runtime.v261)
+    implementation(libs.androidx.room.ktx)
+    kapt(libs.androidx.room.compiler.v261)
     // Testing Dependencies
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

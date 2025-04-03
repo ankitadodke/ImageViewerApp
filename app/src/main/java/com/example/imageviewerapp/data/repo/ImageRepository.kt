@@ -32,7 +32,8 @@ class ImageRepositoryImpl @Inject constructor(
                     height = it.height,
                     color = it.color,
                     blur_hash = it.blur_hash,
-                    description = it.description ?: it.alt_description ?: "No description available",
+                    description = it.description ?: it.alt_description
+                    ?: "No description available",
                     alt_description = it.alt_description,
                     breadcrumbs = it.breadcrumbs,
                     urls = it.urls,
@@ -65,7 +66,7 @@ class ImageRepositoryImpl @Inject constructor(
                     description = it.description ?: "No description available",
                     urls = it.urls,
                     links = it.links,
-                    user = UnsplashUser("","","", ProfileImage("","","")),
+                    user = UnsplashUser("", "", "", ProfileImage("", "", "")),
                     createdAt = "",
                     altDescription = ""
                 )
@@ -93,7 +94,7 @@ class ImageRepositoryImpl @Inject constructor(
             description = null,
             width = 0,
             height = 0,
-            color="",
+            color = "",
             slug = "",
             createdAt = "",
             updatedAt = "",

@@ -46,11 +46,13 @@ fun FavoritesScreen(
                         modifier = Modifier.align(Alignment.Center)
                     )
                 }
+
                 is FavoritesUiState.Empty -> {
                     EmptyFavoritesMessage(
                         modifier = Modifier.align(Alignment.Center)
                     )
                 }
+
                 is FavoritesUiState.Success -> {
                     val favoriteImages = (uiState as FavoritesUiState.Success).images
                     FavoriteImagesGrid(
@@ -59,6 +61,7 @@ fun FavoritesScreen(
                         onDeleteClick = { imageId -> viewModel.removeFromFavorites(imageId) }
                     )
                 }
+
                 is FavoritesUiState.Error -> {
                     Text(
                         text = "Error: ${(uiState as FavoritesUiState.Error).message}",
@@ -113,7 +116,7 @@ fun FavoriteImageItem(
     ) {
         Box {
             AsyncImage(
-                model = image.urls.regular?:"",
+                model = image.urls.regular ?: "",
                 contentDescription = image.description,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
