@@ -199,7 +199,7 @@ fun DetailScreen(
                                 fontWeight = FontWeight.Bold
                             )
                             Text(
-                                text = "@${image.user?.profile_image}",
+                                text = "@${image.alt_description}",
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant
                             )
